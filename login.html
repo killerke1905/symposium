@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login</title>
+<link rel="stylesheet" href="css/login.css">
+</head>
+<body>n
+<div class="wrap">
+  <div class="card">
+    <h1>Login to Symposium Quiz</h1>
+    <form id="loginForm">
+      <label>
+        Name:<br>
+        <input type="text" id="name" required>
+      </label><br><br>
+
+      <label>
+        Email:<br>
+        <input type="email" id="email" required>
+      </label><br><br>
+
+      <label>
+        Phone Number:<br>
+        <input type="tel" id="phone" required pattern="[0-9]{10}">
+      </label><br><br>
+
+      <button type="submit" class="btn">Start</button>
+    </form>
+  </div>
+</div>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+
+  if(name && email && phone){
+    // Save to localStorage for later use
+    localStorage.setItem("participant", JSON.stringify({ name, email, phone }));
+
+    // Redirect to dashboard
+    window.location.href = "dashboard.html";
+  }
+});
+</script>
+</body>
+</html>

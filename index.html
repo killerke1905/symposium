@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Symposium Quiz — Combined</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- DASHBOARD -->
+<div class="wrap" id="dashboard">
+  <div class="card">
+    <h1>Welcome <span id="username"></span>!</h1>
+    <p>Select a round to begin:</p>
+
+    <div class="options">
+      <button onclick="location.href='#round1'" class="btn">Round 1 — Preliminary</button>
+      <button onclick="location.href='#round2'" class="btn">Round 2 — Final</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAV PAGE -->
+<div class="wrap card">
+  <h1>Symposium-Procodex</h1>
+  <p class="small">Good to be Intelligent.</p>
+  <div class="nav">
+    <a class="btn" href="#round1">Start Round 1</a>
+    <a class="btn ghost" href="#round2">Round 2 (enter ID)</a>
+    <a class="btn secondary" href="#admin">Admin Panel</a>
+  </div>
+  <footer class="small">© 2025 Symposium Quiz</footer>
+</div>
+
+<!-- LOGIN -->
+<div id="login" class="wrap">
+  <div class="card">
+    <h1>Login to Symposium Quiz</h1>
+    <form id="loginForm">
+      <label>
+        <input type="text" id="name" required placeholder="Enter Your Name">
+      </label><br><br>
+      <label>
+        <input type="email" id="email" required placeholder="Enter Your Email">
+      </label><br><br>
+      <label>
+        <input type="tel" id="phone" required pattern="[0-9]{10}" placeholder="Enter Your Phone Number">
+      </label><br><br>
+      <button type="submit" class="btn">Start</button>
+    </form>
+  </div>
+</div>
+
+<!-- ROUND 1 -->
+<div id="round1" class="wrap">
+  <div class="card">
+    <header>
+      <h1>Round 1 — Preliminary</h1>
+      <div class="timer">Time left: <span id="timer">15:00</span></div>
+    </header>
+
+    <main id="quiz-root" class="question-box">
+      <p class="loading">Loading questions, please wait...</p>
+    </main>
+
+    <footer class="controls">
+      <button id="prevBtn" class="btn secondary" disabled>Previous</button>
+      <button id="saveNextBtn" class="btn secondary">Save & Next</button>
+      <button id="submitBtn" class="btn">Submit</button>
+      <div style="margin-left:auto" class="small">
+        Q <span id="indexDisplay">1</span>/<span id="totalDisplay">0</span>
+      </div>
+    </footer>
+
+    <div id="resultBox" style="display:none;margin-top:12px"></div>
+  </div>
+</div>
+
+<!-- ROUND 2 -->
+<div id="round2" class="wrap" style="gap:20px; max-width:1200px; margin:20px auto;">
+  <div class="card" id="cellsContainer">
+    <header><h2>Python Task Instructions</h2></header>
+  </div>
+
+  <div class="card" id="codeCard">
+    <header>
+      <h2>Python Compiler</h2>
+      <div class="timer">Time left: <span id="timer2">10:00</span></div>
+    </header>
+
+    <textarea id="pythonCode" placeholder="Write your Python code here..."></textarea>
+    <div class="controls">
+      <button class="btn" id="runCode">Run Code</button>
+      <button class="btn" id="submitAll">Submit</button>
+    </div>
+    <pre id="pythonOutput" class="notice"></pre>
+    <div id="resultBox2" class="notice" style="display:none;"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

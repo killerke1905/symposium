@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Final Round — Coding Task</title>
+<link rel="stylesheet" href="css/round2.css">
+<style>
+body { margin:0; font-family:Inter,system-ui,Arial,sans-serif; background:#f6f8fa; color:#0f172a; }
+.wrap { display:flex; gap:20px; max-width:1200px; margin:20px auto; }
+.card { background:#fff; border-radius:10px; padding:18px; box-shadow:0 6px 20px rgba(0,0,0,0.06); flex:1; display:flex; flex-direction:column; }
+.code-cell { background:#f5f5f5; border-radius:8px; padding:10px; margin-bottom:12px; font-family:monospace; white-space:pre; overflow-x:auto; }
+textarea { flex:1; width:100%; font-family:monospace; font-size:14px; padding:10px; border-radius:8px; border:1px solid #ccc; margin-bottom:10px; }
+.controls { margin-top:10px; display:flex; gap:8px; }
+.btn { padding:10px 12px; border-radius:8px; border:none; cursor:pointer; background:#2563eb; color:#fff; }
+.timer { font-weight:700; margin-top:5px; }
+.notice { background:#fff6d6; padding:10px; border-radius:8px; margin-top:12px; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- Left: Python instructions -->
+  <div class="card" id="cellsContainer">
+    <header><h2>Python Task Instructions</h2></header>
+  </div>
+
+  <!-- Right: Python editor -->
+  <div class="card" id="codeCard">
+    <header>
+      <h2>Python Compiler</h2>
+      <div class="timer">Time left: <span id="timer">10:00</span></div>
+    </header>
+
+    <!-- Python editor -->
+    <textarea id="pythonCode" placeholder="Write your Python code here..."></textarea>
+    <div class="controls">
+      <button class="btn" id="runCode">Run Code</button>
+      <button class="btn" id="submitAll">Submit</button>
+    </div>
+    <pre id="pythonOutput" class="notice" style="background:#f3f3f3;"></pre>
+    <div id="resultBox" class="notice" style="display:none;"></div>
+  </div>
+
+</div>
+
+<!-- Skulpt JS for running Python -->
+<script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js"></script>
+<script src="js/round2.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Round 1 — Symposium Quiz</title>
+  <link rel="stylesheet" href="css/round1.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <h1>Round 1 — Preliminary</h1>
+        <div class="timer" id="timer">15:00</div>
+      </header>
+
+      <div class="layout">
+        <!-- Left: Question -->
+        <div class="left">
+          <div id="questionBox" class="question"></div>
+          <div class="options">
+            <label><input type="radio" name="option" value="A"> <span id="optA"></span></label>
+            <label><input type="radio" name="option" value="B"> <span id="optB"></span></label>
+            <label><input type="radio" name="option" value="C"> <span id="optC"></span></label>
+            <label><input type="radio" name="option" value="D"> <span id="optD"></span></label>
+          </div>
+
+          <div class="controls">
+            <button id="prevBtn" class="btn secondary" disabled>Previous</button>
+            <button id="nextBtn" class="btn secondary">Save & Next</button>
+            <button id="submitBtn" class="btn" style="display:none">Submit</button>
+            <div class="counter" id="counter">Q 1/20</div>
+          </div>
+        </div>
+
+        <!-- Right: Grid -->
+        <div class="right">
+          <h3>Questions</h3>
+          <div id="questionGrid" class="grid-box"></div>
+        </div>
+      </div>
+
+      <div id="resultBox" style="display:none;margin-top:12px"></div>
+    </div>
+  </div>
+
+  <script src="js/round1.js"></script>
+</body>
+</html>

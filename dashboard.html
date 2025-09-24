@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard — Symposium Quiz</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <h1>Welcome <span id="username"></span>!</h1>
+    <p>Select a round to begin:</p>
+
+    <div class="options">
+      <button onclick="location.href='round1.html'" class="btn">Round 1 — Preliminary</button>
+      <button onclick="location.href='round2.html'" class="btn">Round 2 — Final</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const user = JSON.parse(localStorage.getItem("participant"));
+if(user){
+  document.getElementById("username").innerText = user.name;
+}else{
+  // if no login info, redirect back
+  window.location.href = "login.html";
+}
+</script>
+</body>
+</html>
